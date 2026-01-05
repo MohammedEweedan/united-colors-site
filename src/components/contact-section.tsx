@@ -43,76 +43,14 @@ export default function ContactSection() {
           <p className="section-subtitle">{dict.contact.subtitle}</p>
         </header>
 
-        <div className="contact-grid">
-          <div className="contact-panel">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="field">
-                <label className="label">{dict.contact.form.name}</label>
-                <input
-                  className="input"
-                  type="text"
-                  name="from_name"
-                  required
-                />
-              </div>
-
-              <div className="field">
-                <label className="label">{dict.contact.form.company}</label>
-                <input className="input" type="text" name="company" />
-              </div>
-
-              <div className="field">
-                <label className="label">{dict.contact.form.email}</label>
-                <input
-                  className="input"
-                  type="email"
-                  name="reply_to"
-                  required
-                />
-              </div>
-
-              <div className="field">
-                <label className="label">{dict.contact.form.phone}</label>
-                <input className="input" type="tel" name="phone" />
-              </div>
-
-              <div className="field">
-                <label className="label">{dict.contact.form.message}</label>
-                <textarea className="textarea" name="message" required />
-              </div>
-
-              <button
-                type="submit"
-                className="button-primary"
-                disabled={status === "loading"}
-              >
-                {status === "loading" ? "Sending..." : dict.contact.form.submit}
-              </button>
-
-              {status === "success" && (
-                <p className="form-note" style={{ color: "#22c55e" }}>
-                  Message sent successfully.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="form-note" style={{ color: "#f97316" }}>
-                  {errorMessage}
-                </p>
-              )}
-            </form>
-          </div>
-
           <div className="card">
             <h3 className="card-title">{t("nav.contact")}</h3>
             <p className="card-body">
               {dict.contact.details.phone}
               <br />
-              {dict.contact.details.email}
-              <br />
               {dict.contact.details.address}
             </p>
           </div>
-        </div>
       </div>
     </section>
   );
